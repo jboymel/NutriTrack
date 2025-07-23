@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NutriTrack - Food Library</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="logo">NutriTrack</div>
+            <nav class="nav">
+                <a href="index.html" class="nav-item">Home</a>
+                <a href="foodlibrary.html" class="nav-item">Food Library</a>
+                <a href="mealtracker.html" class="nav-item">Track Meals</a>
+                <a href="about.html" class="nav-item">About</a>
+                <a href="#" class="nav-item">Login</a>
+            </nav>
+        </div>
+
+        <div class="content-section">
+            <h3>Accessibility Options</h3>
+            <button onclick="increaseFontSize()" class="button">A+</button>
+            <button onclick="decreaseFontSize()" class="button">A-</button>
+            <button onclick="toggleTheme()" class="button">Toggle Theme</button>
+        </div>
+        
+        <div class="content-section">
+            <h2>Food & Nutrition Library</h2>
+            <p><a href="#filters" class="jump-link">Jump to Filters ⬇</a></p>
+            
+            <div class="form-group">
+                <input type="text" class="form-input" placeholder="🔍 Search for foods (e.g., apple, chicken breast, quinoa)">
+            </div>
+        </div>
+        
+        <div class="image">
+            <img src="https://www.fda.gov/files/nfl-howtounderstand-labeled.png"
+            alt="how to read nutrition label"
+            loading="lazy" width="75%" />
+        </div>
+        
+        <div class="content-section" id="filters">
+            <h3>Filter Foods</h3>
+            <div class="grid">
+                <div class="form-group">
+                    <label>Calories (per 100g)</label>
+                    <select class="form-input">
+                        <option>Any</option>
+                        <option>Under 100</option>
+                        <option>100-300</option>
+                        <option>Over 300</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Protein Content</label>
+                    <select class="form-input">
+                        <option>Any</option>
+                        <option>High Protein (15g+)</option>
+                        <option>Medium (5-15g)</option>
+                        <option>Low (Under 5g)</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Sugar Content</label>
+                    <select class="form-input">
+                        <option>Any</option>
+                        <option>Low Sugar (Under 5g)</option>
+                        <option>Medium (5-15g)</option>
+                        <option>High (Over 15g)</option>
+                    </select>
+                </div>
+            </div>
+            <button class="button">Apply Filters</button>
+        </div>
+        
+        <div class="content-section">
+            <h3>Food Results</h3>
+            <div class="grid">
+                <div class="card">
+                    <h4>🍎 Apple (Medium)</h4>
+                    <p><strong>Calories:</strong> 95 | <strong>Carbs:</strong> 25g | <strong>Sugar:</strong> 19g</p>
+                    <button class="button">View Details</button>
+                    <button class="button">Add to Log</button>
+                </div>
+                <div class="card">
+                    <h4>🥗 Chicken Breast</h4>
+                    <p><strong>Calories:</strong> 165 | <strong>Protein:</strong> 31g | <strong>Fat:</strong> 3.6g</p>
+                    <button class="button">View Details</button>
+                    <button class="button">Add to Log</button>
+                </div>
+                <div class="card">
+                    <h4>🥑 Avocado</h4>
+                    <p><strong>Calories:</strong> 160 | <strong>Fat:</strong> 15g | <strong>Fiber:</strong> 7g</p>
+                    <button class="button">View Details</button>
+                    <button class="button">Add to Log</button>
+                </div>
+                <div class="card">
+                    <h4>🥛 Greek Yogurt</h4>
+                    <p><strong>Calories:</strong> 100 | <strong>Protein:</strong> 17g | <strong>Sugar:</strong> 6g</p>
+                    <button class="button">View Details</button>
+                    <button class="button">Add to Log</button>
+                </div>
+            </div>
+        </div>
+        
+        <div class="footer">
+            <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
