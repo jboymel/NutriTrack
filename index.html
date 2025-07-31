@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Home</title>
     <link rel="stylesheet" href="main.css">
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -65,6 +68,8 @@
             <h3>Trusted Nutrition Data</h3>
             <p>Our database is powered by reliable sources including the <a href="https://fdc.nal.usda.gov/" class="external-link">USDA FoodData Central</a> to ensure accurate nutrition information.</p>
         </div>
+
+        <div id="tip-of-the-day"></div>
         
         <div class="footer">
             <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
@@ -72,5 +77,27 @@
     </div>
 
     <script src="script.js"></script>
+
+    <script type="text/babel">
+        const tips = [
+          "Drink water before meals to help control appetite.",
+          "Include protein with every meal to stay full longer.",
+          "Aim for at least 5 servings of fruits and vegetables daily.",
+          "Limit sugary drinks for better blood sugar control.",
+          "Whole grains > refined grains for fiber and nutrients."
+        ];
+      
+        function TipOfTheDay() {
+          const randomTip = tips[Math.floor(Math.random() * tips.length)];
+          return (
+            <div className="content-section">
+              <h3>Nutrition Tip of the Day</h3>
+              <p>{randomTip}</p>
+            </div>
+          );
+        }
+      
+        ReactDOM.createRoot(document.getElementById('tip-of-the-day')).render(<TipOfTheDay />);
+    </script>
 </body>
 </html>
