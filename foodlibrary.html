@@ -31,7 +31,7 @@
             <p><a href="#filters" class="jump-link">Jump to Filters ⬇</a></p>
             
             <div class="form-group">
-                <input type="text" class="form-input" placeholder="🔍 Search for foods (e.g., apple, chicken breast, quinoa)">
+                <input type="text" class="form-input" placeholder="🔍 Search for foods (e.g., apple, chicken breast, quinoa)" id="food-search" oninput="handleSearch()">
             </div>
         </div>
         
@@ -46,7 +46,7 @@
             <div class="grid">
                 <div class="form-group">
                     <label>Calories (per 100g)</label>
-                    <select class="form-input">
+                    <select class="form-input" id="calorie-filter">
                         <option>Any</option>
                         <option>Under 100</option>
                         <option>100-300</option>
@@ -55,7 +55,7 @@
                 </div>
                 <div class="form-group">
                     <label>Protein Content</label>
-                    <select class="form-input">
+                    <select class="form-input" id="protein-filter">  
                         <option>Any</option>
                         <option>High Protein (15g+)</option>
                         <option>Medium (5-15g)</option>
@@ -64,7 +64,7 @@
                 </div>
                 <div class="form-group">
                     <label>Sugar Content</label>
-                    <select class="form-input">
+                    <select class="form-input" id="sugar-filter">
                         <option>Any</option>
                         <option>Low Sugar (Under 5g)</option>
                         <option>Medium (5-15g)</option>
@@ -72,37 +72,12 @@
                     </select>
                 </div>
             </div>
-            <button class="button" onclick="alert('Feature coming soon!')">Apply Filters</button>
+            <button class="button" onclick="applyFilters()">Apply Filters</button>
         </div>
         
         <div class="content-section">
-            <h3>Food Results</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>🍎 Apple (Medium)</h4>
-                    <p><strong>Calories:</strong> 95 | <strong>Carbs:</strong> 25g | <strong>Sugar:</strong> 19g</p>
-                    <button class="button">View Details</button>
-                    <button class="button">Add to Log</button>
-                </div>
-                <div class="card">
-                    <h4>🥗 Chicken Breast</h4>
-                    <p><strong>Calories:</strong> 165 | <strong>Protein:</strong> 31g | <strong>Fat:</strong> 3.6g</p>
-                    <button class="button">View Details</button>
-                    <button class="button">Add to Log</button>
-                </div>
-                <div class="card">
-                    <h4>🥑 Avocado</h4>
-                    <p><strong>Calories:</strong> 160 | <strong>Fat:</strong> 15g | <strong>Fiber:</strong> 7g</p>
-                    <button class="button">View Details</button>
-                    <button class="button">Add to Log</button>
-                </div>
-                <div class="card">
-                    <h4>🥛 Greek Yogurt</h4>
-                    <p><strong>Calories:</strong> 100 | <strong>Protein:</strong> 17g | <strong>Sugar:</strong> 6g</p>
-                    <button class="button">View Details</button>
-                    <button class="button">Add to Log</button>
-                </div>
-            </div>
+            <h3>Food Results</h3>          
+            <div class="grid" id="food-results"></div>
         </div>
         
         <div class="footer">
