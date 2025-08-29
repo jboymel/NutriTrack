@@ -43,6 +43,29 @@ const foodDatabase = [
   { name: "Sweet Potato", emoji: "🍠", calories: 86, carbs: 20, sugar: 4.2, protein: 1.6, fat: 0.1, fiber: 3 }
 ];
 
+function getCustomFoods() {
+  return foodDatabase.filter(food => !isDefaultFood(food));
+}
+
+function isDefaultFood(food) {
+  const defaultFoods = ["Apple (Medium)", "Chicken Breast", "Avocado", "Greek Yogurt", "Banana", "Salmon", "Broccoli", "Brown Rice", "Almonds", "Sweet Potato"];
+  return defaultFoods.includes(food.name);
+}
+
+function loadCustomFoods() {
+  const saved = localStorage.getItem('customFoods');
+  if (saved) {
+      const customFoods = JSON.parse(saved);
+      customFoods.forEach(food => {
+          if (!foodDatabase.find(f => f.name === food.name)) {
+              foodDatabase.push(food);
+          }
+      });
+  }
+}
+
+loadCustomFoods();
+
 function searchFoods(query) {
   if (!query) return foodDatabase;
   return foodDatabase.filter(food => 
@@ -71,7 +94,6 @@ function filterFoods(calorieFilter, proteinFilter, sugarFilter) {
 }
 
 function displayFoods(foods) {
-  //const resultsContainer = document.querySelector('.content-section h3').parentElement.querySelector('.grid');
   const resultsContainer = document.getElementById('food-results');
   if (!resultsContainer) return;
   
@@ -103,6 +125,7 @@ function applyFilters() {
 // initialize food display when page loads
 document.addEventListener('DOMContentLoaded', function() {
   if (window.location.pathname.includes('foodlibrary.html')) {
+      loadCustomFoods();
       displayFoods(foodDatabase);
   }
 });
@@ -229,6 +252,7 @@ function addCustomFood() {
   };
   
   foodDatabase.push(customFood);
+  localStorage.setItem('customFoods', JSON.stringify(getCustomFoods()));
   alert(`Added ${name} to food database!`);
 }
 
