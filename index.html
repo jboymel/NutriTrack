@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +10,7 @@
     <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
     <script crossorigin src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -22,82 +24,87 @@
             </nav>
         </div>
 
-        <div class="content-section">
-            <h3>Accessibility Options</h3>
-            <button onclick="increaseFontSize()" class="button">A+</button>
-            <button onclick="decreaseFontSize()" class="button">A-</button>
-            <button onclick="toggleTheme()" class="button">Toggle Theme</button>
-        </div>
-        
-        <div class="hero">
-            <h1>Eat Smarter. Live Healthier.</h1>
-            <p>Track your nutrition, explore foods, and achieve your health goals with our comprehensive nutrition database.</p>
-            <button class="button button-primary" onclick="window.location.href='foodlibrary.html'">Explore Foods Now</button>
-            <button class="button" onclick="window.location.href='mealtracker.html'">Start Tracking</button>
-        </div>
-        
-        <div class="image">
-            <img src="https://www.ucsfhealth.org/-/media/project/ucsf/ucsf-health/education/hero/top-ten-foods-for-health-2x.jpg?rev=890e0016d9824d5789d4eaa610ce606e"
-            alt="colorful plate of healthy food representing balanced nutrition."
-            loading="lazy" width="100%" />
-        </div>
-        
-        <div class="content-section">
-            <h3>Why Choose NutriTrack?</h3>
-            <div class="grid">
-                <div class="card">
-                    <h4>Comprehensive Food Database</h4>
-                    <p>Access nutrition facts for thousands of foods and ingredients</p>
-                </div>
-                <div class="card">
-                    <h4>Personal Tracking</h4>
-                    <p>Set goals and track your daily nutrition intake</p>
-                </div>
-                <div class="card">
-                    <h4>Custom Foods</h4>
-                    <p>Add your own recipes and custom food items</p>
-                </div>
-                <div class="card">
-                    <h4>Goal Setting</h4>
-                    <p>Set calorie limits, sugar maximums, and protein targets</p>
+        <main role="main">
+            <div class="content-section">
+                <h3>Accessibility Options</h3>
+                <button onclick="increaseFontSize()" class="button">A+</button>
+                <button onclick="decreaseFontSize()" class="button">A-</button>
+                <button onclick="toggleTheme()" class="button">Toggle Theme</button>
+            </div>
+
+            <div class="hero">
+                <h1>Eat Smarter. Live Healthier.</h1>
+                <p>Track your nutrition, explore foods, and achieve your health goals with our comprehensive nutrition
+                    database.</p>
+                <button class="button button-primary" onclick="window.location.href='foodlibrary.html'">Explore Foods
+                    Now</button>
+                <button class="button" onclick="window.location.href='mealtracker.html'">Start Tracking</button>
+            </div>
+
+            <div class="image">
+                <img src="https://www.ucsfhealth.org/-/media/project/ucsf/ucsf-health/education/hero/top-ten-foods-for-health-2x.jpg?rev=890e0016d9824d5789d4eaa610ce606e"
+                    alt="colorful plate of healthy food representing balanced nutrition." loading="lazy" width="100%" />
+            </div>
+
+            <div class="content-section">
+                <h3>Why Choose NutriTrack?</h3>
+                <div class="grid">
+                    <div class="card">
+                        <h4>Comprehensive Food Database</h4>
+                        <p>Access nutrition facts for thousands of foods and ingredients</p>
+                    </div>
+                    <div class="card">
+                        <h4>Personal Tracking</h4>
+                        <p>Set goals and track your daily nutrition intake</p>
+                    </div>
+                    <div class="card">
+                        <h4>Custom Foods</h4>
+                        <p>Add your own recipes and custom food items</p>
+                    </div>
+                    <div class="card">
+                        <h4>Goal Setting</h4>
+                        <p>Set calorie limits, sugar maximums, and protein targets</p>
+                    </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="content-section">
-            <h3>Trusted Nutrition Data</h3>
-            <p>Our database is powered by reliable sources including the <a href="https://fdc.nal.usda.gov/" class="external-link">USDA FoodData Central</a> to ensure accurate nutrition information.</p>
-        </div>
 
-        <div id="tip-of-the-day"></div>
-        
-        <div class="footer">
-            <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
-        </div>
+            <div class="content-section">
+                <h3>Trusted Nutrition Data</h3>
+                <p>Our database is powered by reliable sources including the <a href="https://fdc.nal.usda.gov/"
+                        class="external-link">USDA FoodData Central</a> to ensure accurate nutrition information.</p>
+            </div>
+
+            <div id="tip-of-the-day"></div>
+
+            <div class="footer">
+                <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
+            </div>
+        </main>
     </div>
 
     <script src="script.js"></script>
 
     <script type="text/babel">
         const tips = [
-          "Drink water before meals to help control appetite.",
-          "Include protein with every meal to stay full longer.",
-          "Aim for at least 5 servings of fruits and vegetables daily.",
-          "Limit sugary drinks for better blood sugar control.",
-          "Whole grains > refined grains for fiber and nutrients."
+            "Drink water before meals to help control appetite.",
+            "Include protein with every meal to stay full longer.",
+            "Aim for at least 5 servings of fruits and vegetables daily.",
+            "Limit sugary drinks for better blood sugar control.",
+            "Whole grains > refined grains for fiber and nutrients."
         ];
-      
+
         function TipOfTheDay() {
-          const randomTip = tips[Math.floor(Math.random() * tips.length)];
-          return (
-            <div className="content-section">
-              <h3>Nutrition Tip of the Day</h3>
-              <p>{randomTip}</p>
-            </div>
-          );
+            const randomTip = tips[Math.floor(Math.random() * tips.length)];
+            return (
+                <div className="content-section">
+                    <h3>Nutrition Tip of the Day</h3>
+                    <p>{randomTip}</p>
+                </div>
+            );
         }
-      
+
         ReactDOM.createRoot(document.getElementById('tip-of-the-day')).render(<TipOfTheDay />);
     </script>
 </body>
+
 </html>

@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Meal Tracker</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -19,90 +21,92 @@
             </nav>
         </div>
 
-        <div class="content-section">
-            <h3>Accessibility Options</h3>
-            <button onclick="increaseFontSize()" class="button">A+</button>
-            <button onclick="decreaseFontSize()" class="button">A-</button>
-            <button onclick="toggleTheme()" class="button">Toggle Theme</button>
-        </div>
-        
-        <div class="content-section">
-            <h2>My Daily Nutrition Tracker</h2>
-            <p>Welcome back, User! Here's your nutrition summary for today.</p>
-        </div>
-        
-        <div class="dashboard-stats">
-            <div class="stat-box">
-                <h3>1,247</h3>
-                <p>Calories Consumed</p>
-                <small>Goal: 2,000</small>
+        <main role="main">
+            <div class="content-section">
+                <h3>Accessibility Options</h3>
+                <button onclick="increaseFontSize()" class="button">A+</button>
+                <button onclick="decreaseFontSize()" class="button">A-</button>
+                <button onclick="toggleTheme()" class="button">Toggle Theme</button>
             </div>
-            <div class="stat-box">
-                <h3>67g</h3>
-                <p>Protein</p>
-                <small>Goal: 80g</small>
+
+            <div class="content-section">
+                <h2>My Daily Nutrition Tracker</h2>
+                <p>Welcome back, User! Here's your nutrition summary for today.</p>
             </div>
-            <div class="stat-box">
-                <h3>23g</h3>
-                <p>Sugar</p>
-                <small>Limit: 50g</small>
+
+            <div class="dashboard-stats">
+                <div class="stat-box">
+                    <h3>1,247</h3>
+                    <p>Calories Consumed</p>
+                    <small>Goal: 2,000</small>
+                </div>
+                <div class="stat-box">
+                    <h3>67g</h3>
+                    <p>Protein</p>
+                    <small>Goal: 80g</small>
+                </div>
+                <div class="stat-box">
+                    <h3>23g</h3>
+                    <p>Sugar</p>
+                    <small>Limit: 50g</small>
+                </div>
+                <div class="stat-box">
+                    <h3>45g</h3>
+                    <p>Fat</p>
+                    <small>Goal: 65g</small>
+                </div>
             </div>
-            <div class="stat-box">
-                <h3>45g</h3>
-                <p>Fat</p>
-                <small>Goal: 65g</small>
+
+            <div class="content-section">
+                <h3>Today's Meals</h3>
+
+                <div class="box">
+                    <h4>🌅 Breakfast (8:00 AM)</h4>
+                    <ul>
+                        <li>Greek Yogurt (1 cup) - 100 cal</li>
+                        <li>Blueberries (1/2 cup) - 42 cal</li>
+                        <li>Granola (2 tbsp) - 67 cal</li>
+                    </ul>
+                    <p><strong>Total:</strong> 209 calories</p>
+                </div>
+
+                <div class="box">
+                    <h4>🍽️ Lunch (12:30 PM)</h4>
+                    <ul>
+                        <li>Grilled Chicken Breast (4oz) - 185 cal</li>
+                        <li>Mixed Salad (2 cups) - 20 cal</li>
+                        <li>Olive Oil Dressing (1 tbsp) - 120 cal</li>
+                    </ul>
+                    <p><strong>Total:</strong> 325 calories</p>
+                </div>
+
+                <div class="box">
+                    <h4>🥙 Snack (3:00 PM)</h4>
+                    <ul>
+                        <li>Apple (medium) - 95 cal</li>
+                        <li>Almonds (1oz) - 164 cal</li>
+                    </ul>
+                    <p><strong>Total:</strong> 259 calories</p>
+                </div>
+
+                <div class="box">
+                    <h4>🍽️ Dinner</h4>
+                    <p><em>Not logged yet</em></p>
+                    <button class="button button-primary" onclick="promptAddFood('dinner')">Add Dinner Foods</button>
+                </div>
             </div>
-        </div>
-        
-        <div class="content-section">
-            <h3>Today's Meals</h3>
-            
-            <div class="box">
-                <h4>🌅 Breakfast (8:00 AM)</h4>
-                <ul>
-                    <li>Greek Yogurt (1 cup) - 100 cal</li>
-                    <li>Blueberries (1/2 cup) - 42 cal</li>
-                    <li>Granola (2 tbsp) - 67 cal</li>
-                </ul>
-                <p><strong>Total:</strong> 209 calories</p>
+
+            <div class="content-section">
+                <h3>Quick Actions</h3>
+                <div class="grid">
+                    <button class="button" onclick="window.location.href='foodlibrary.html'">Add Food to Log</button>
+                    <button class="button" onclick="addCustomFood()">Add Custom Food</button>
+                    <button class="button" onclick="alert('Charts feature coming soon!')">View Progress Charts</button>
+                    <button class="button" onclick="updateGoals()">Update Goals</button>
+                </div>
             </div>
-            
-            <div class="box">
-                <h4>🍽️ Lunch (12:30 PM)</h4>
-                <ul>
-                    <li>Grilled Chicken Breast (4oz) - 185 cal</li>
-                    <li>Mixed Salad (2 cups) - 20 cal</li>
-                    <li>Olive Oil Dressing (1 tbsp) - 120 cal</li>
-                </ul>
-                <p><strong>Total:</strong> 325 calories</p>
-            </div>
-            
-            <div class="box">
-                <h4>🥙 Snack (3:00 PM)</h4>
-                <ul>
-                    <li>Apple (medium) - 95 cal</li>
-                    <li>Almonds (1oz) - 164 cal</li>
-                </ul>
-                <p><strong>Total:</strong> 259 calories</p>
-            </div>
-            
-            <div class="box">
-                <h4>🍽️ Dinner</h4>
-                <p><em>Not logged yet</em></p>
-                <button class="button button-primary" onclick="promptAddFood('dinner')">Add Dinner Foods</button>
-            </div>
-        </div>
-        
-        <div class="content-section">
-            <h3>Quick Actions</h3>
-            <div class="grid">
-                <button class="button" onclick="window.location.href='foodlibrary.html'">Add Food to Log</button>
-                <button class="button" onclick="addCustomFood()">Add Custom Food</button>
-                <button class="button" onclick="alert('Charts feature coming soon!')">View Progress Charts</button>
-                <button class="button" onclick="updateGoals()">Update Goals</button>
-            </div>
-        </div>
-        
+        </main>
+
         <div class="footer">
             <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
         </div>
@@ -110,4 +114,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>

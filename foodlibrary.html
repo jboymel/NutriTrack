@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>NutriTrack - Food Library</title>
     <link rel="stylesheet" href="main.css">
 </head>
+
 <body>
     <div class="container">
         <div class="header">
@@ -19,67 +21,70 @@
             </nav>
         </div>
 
-        <div class="content-section">
-            <h3>Accessibility Options</h3>
-            <button onclick="increaseFontSize()" class="button">A+</button>
-            <button onclick="decreaseFontSize()" class="button">A-</button>
-            <button onclick="toggleTheme()" class="button">Toggle Theme</button>
-        </div>
-        
-        <div class="content-section">
-            <h2>Food & Nutrition Library</h2>
-            <p><a href="#filters" class="jump-link">Jump to Filters ⬇</a></p>
-            
-            <div class="form-group">
-                <input type="text" class="form-input" placeholder="🔍 Search for foods (e.g., apple, chicken breast, quinoa)" id="food-search" oninput="handleSearch()">
+        <main role="main">
+            <div class="content-section">
+                <h3>Accessibility Options</h3>
+                <button onclick="increaseFontSize()" class="button">A+</button>
+                <button onclick="decreaseFontSize()" class="button">A-</button>
+                <button onclick="toggleTheme()" class="button">Toggle Theme</button>
             </div>
-        </div>
-        
-        <div class="image">
-            <img src="https://www.fda.gov/files/nfl-howtounderstand-labeled.png"
-            alt="how to read nutrition label"
-            loading="lazy" width="75%" />
-        </div>
-        
-        <div class="content-section" id="filters">
-            <h3>Filter Foods</h3>
-            <div class="grid">
+
+            <div class="content-section">
+                <h2>Food & Nutrition Library</h2>
+                <p><a href="#filters" class="jump-link">Jump to Filters ⬇</a></p>
+
                 <div class="form-group">
-                    <label>Calories (per 100g)</label>
-                    <select class="form-input" id="calorie-filter">
-                        <option>Any</option>
-                        <option>Under 100</option>
-                        <option>100-300</option>
-                        <option>Over 300</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Protein Content</label>
-                    <select class="form-input" id="protein-filter">  
-                        <option>Any</option>
-                        <option>High Protein (15g+)</option>
-                        <option>Medium (5-15g)</option>
-                        <option>Low (Under 5g)</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Sugar Content</label>
-                    <select class="form-input" id="sugar-filter">
-                        <option>Any</option>
-                        <option>Low Sugar (Under 5g)</option>
-                        <option>Medium (5-15g)</option>
-                        <option>High (Over 15g)</option>
-                    </select>
+                    <input type="text" class="form-input"
+                        placeholder="🔍 Search for foods (e.g., apple, chicken breast, quinoa)" id="food-search"
+                        oninput="handleSearch()">
                 </div>
             </div>
-            <button class="button" onclick="applyFilters()">Apply Filters</button>
-        </div>
-        
-        <div class="content-section">
-            <h3>Food Results</h3>          
-            <div class="grid" id="food-results"></div>
-        </div>
-        
+
+            <div class="image">
+                <img src="https://www.fda.gov/files/nfl-howtounderstand-labeled.png" alt="how to read nutrition label"
+                    loading="lazy" width="75%" />
+            </div>
+
+            <div class="content-section" id="filters">
+                <h3>Filter Foods</h3>
+                <div class="grid">
+                    <div class="form-group">
+                        <label>Calories (per 100g)</label>
+                        <select class="form-input" id="calorie-filter">
+                            <option>Any</option>
+                            <option>Under 100</option>
+                            <option>100-300</option>
+                            <option>Over 300</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Protein Content</label>
+                        <select class="form-input" id="protein-filter">
+                            <option>Any</option>
+                            <option>High Protein (15g+)</option>
+                            <option>Medium (5-15g)</option>
+                            <option>Low (Under 5g)</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Sugar Content</label>
+                        <select class="form-input" id="sugar-filter">
+                            <option>Any</option>
+                            <option>Low Sugar (Under 5g)</option>
+                            <option>Medium (5-15g)</option>
+                            <option>High (Over 15g)</option>
+                        </select>
+                    </div>
+                </div>
+                <button class="button" onclick="applyFilters()">Apply Filters</button>
+            </div>
+
+            <div class="content-section">
+                <h3>Food Results</h3>
+                <div class="grid" id="food-results"></div>
+            </div>
+        </main>
+
         <div class="footer">
             <p>Contact us: <a href="mailto:info@nutritrack.com" class="email-link">info@nutritrack.com</a></p>
         </div>
@@ -87,4 +92,5 @@
 
     <script src="script.js"></script>
 </body>
+
 </html>
