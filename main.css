@@ -18,7 +18,7 @@ body {
     border: 2px solid #ddd;
 }
 
-/* Header */
+/* header */
 .header {
     border: 2px solid #333;
     padding: 15px;
@@ -47,7 +47,7 @@ body {
     color: #333;
 }
 
-/* Hero */
+/* hero */
 .hero {
     border: 2px solid #666;
     padding: 40px;
@@ -56,7 +56,7 @@ body {
     background: #f0f0f0;
 }
 
-/* Content sections */
+/* content sections */
 .content-section {
     border: 2px solid #999;
     padding: 20px;
@@ -71,7 +71,7 @@ body {
     background: #f0f0f0;
 }
 
-/* Basic elements */
+/* basic elements */
 .box {
     border: 2px solid #666;
     padding: 15px;
@@ -124,6 +124,20 @@ body {
     background: #e0e0e0;
     cursor: pointer;
     margin: 5px;
+}
+
+.button:focus,
+.form-input:focus,
+.nav-item:focus {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
+}
+
+.button:focus-visible,
+.form-input:focus-visible,
+.nav-item:focus-visible {
+    outline: 3px solid #0066cc;
+    outline-offset: 2px;
 }
 
 .button-primary {
@@ -211,7 +225,7 @@ body {
     }
  }
 
- /* Dark Theme Styles */
+ /* dark theme styles */
 .dark-theme {
     background-color: #111 !important;
     color: #eee !important;
